@@ -27,7 +27,6 @@ body {
     );
 }
 
-
 header {
   display: flex;
   width: 100%;
@@ -41,7 +40,7 @@ header {
   font-family: 'Tangerine', cursive;
 }
 
-.waterSource {
+.h1_waterSource {
   position: relative;
   left: 50px;
   color: white;
@@ -50,35 +49,11 @@ header {
   opacity: 0.6;
 }
 
-.waterSourceSmall {
-  font-family: 'Tangerine', cursive;
-  font-weight: 600;
-  font-size: 2em;
-  opacity: 0.6;
-}
-
-.theSpan {
+.h1_theSpan {
   font-family: 'Tangerine', cursive;
   font-style: italic;
   font-weight: 200;
   opacity: 0.5;
-}
-
-.theSpanSmall {
-  font-family: 'Tangerine', cursive;
-  font-style: italic;
-  font-weight: 600;
-  opacity: 0.3;
-  font-size: 2em;
-}
-
-.header_border1 {
-}
-
-.header_border2 {
-}
-
-.header_border3 {
 }
 
 nav {
@@ -102,17 +77,6 @@ nav > ul {
   padding: 3px 5vw;
 }
 
-.logo {
-  height: auto;
-  width: 5vw;
-}
-
-.logo > img {
-  object-fit: cover;
-  width: 100%;
-  height: 50px;
-}
-
 nav > ul > li {
   display: flex;
   align-items: center;
@@ -127,10 +91,6 @@ nav > ul > li:hover {
   transition: linear 0.6s;
 }
 
-nav > ul > a:active {
-  background-color: var(--color-acc1);
-}
-
 nav > ul > li > a {
   display: flex;
   align-items: center;
@@ -141,7 +101,22 @@ nav > ul > li > a {
   text-decoration: none;
 }
 
-.push {
+nav > ul > li > a:active {
+  background-color: var(--color-acc1);
+}
+
+.nav_logo {
+  height: auto;
+  width: 5vw;
+}
+
+.nav_logo > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50px;
+}
+
+.nav_push {
   margin-right: auto;
   border-radius: 3px;
 }
@@ -150,7 +125,7 @@ nav > ul > li > a {
   nav {
     font-size: 0.6em;
   }
-  .logo {
+  .nav_logo {
     width: 12vw;
   }
   nav > ul {
@@ -163,17 +138,13 @@ nav > ul > li > a {
   nav {
     font-size: 0.65em;
   }
-  nav > ul {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
   nav > ul > li > a {
     padding: 0 5px;
   }
 }
 
 @media only screen and (min-width: 1800px) {
-  .logo {
+  .nav_logo {
     width: 3.5vw;
   }
 }
@@ -199,7 +170,23 @@ main {
   padding-bottom: 60px;
 }
 
-.signup_block {
+.signup_block > label {
+  padding: 0 5px;
+}
+
+.email_waterSourceSmall {
+  font-family: 'Tangerine', cursive;
+  font-weight: 600;
+  font-size: 2em;
+  opacity: 0.6;
+}
+
+.email_theSpanSmall {
+  font-family: 'Tangerine', cursive;
+  font-style: italic;
+  font-weight: 600;
+  opacity: 0.3;
+  font-size: 2em;
 }
 
 .signup_inputContainer{
@@ -207,41 +194,34 @@ main {
   flex-direction: column;
 }
 
-.signup_block > label {
-  padding: 0 5px;
-}
-
-.signup_block > input {
-}
-
-.signup_block > input:focus {
+.signup_inputContainer > input:focus {
   outline-color: var(--color-main);
-  background-color: var(--color-acc2tt);
+  background-color: var(--color-acc2t);
 }
 
 .signup_button {
   display: block;
+  width: 200px;
+  padding: 10px 0;
+  color: var(--color-acc2);
   background-color: var(--color-acc1);
   border-radius: 3px;
   border: none;
-  padding: 10px 0;
   line-height: 1.7em;
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
   text-align: center;
   font-size: 1em;
   font-weight: 500;
-  color: var(--color-acc2);
   cursor: pointer;
-  width: 200px;
 }
 
 .signup_button:hover {
   transition: all 0.6s linear;
+  transform: scale(0.95);
   background-color: var(--color-acc2);
   border: 1px solid var(--color-main);
   color: var(--color-main);
-  transform: scale(0.95);
 }
 
 .signup_button:focus {
@@ -257,29 +237,29 @@ main {
   "icon2 content2"
   "icon3 content3";
   grid-gap: 10px;
-  border-bottom: 1px solid var(--color-acc2tt);
+  justify-content: center;
+  align-items: center;
   padding-bottom: 20px;
   margin-bottom: 60px;
   padding-left: 5vw;
   padding-right: 5vw;
-  justify-content: center;
-  align-items: center;
+  border-bottom: 1px solid var(--color-acc2tt);
 }
 
 .product_highlightIcon {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color-main);
-  border-radius: 3px;
   height: 15vh;
   width: auto;
+  background-color: var(--color-main);
+  border-radius: 3px;
 }
 
 .product_highlightIcon > img {
+  object-fit: contain;
   height: 60%;
   max-width: 150%;
-  object-fit: contain;
 }
 
 .highlightIcon1 {
@@ -303,9 +283,9 @@ main {
 }
 
 .product_highlightContent > ul > li {
-  list-style-position: inside;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style-position: inside;
   text-align: left;
 }
 
@@ -328,14 +308,14 @@ main {
 
 .product_highlightImage > img {
   object-fit: cover;
-  border: 1px solid var(--color-acc2);
   width: 100%;
   max-height: 25vh;
   min-height: 18vh;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--color-acc2);
   border-radius: 3px;
   opacity: 0.83;
-  padding: 0;
-  margin: 0;
 }
 
 .highlightImage1 {
@@ -360,22 +340,22 @@ main {
 
 @media only screen and (max-width: 600px) {
   .product_highlight {
-    padding-left: 0;
-    padding-right: 0;
     grid-template-areas:
     "icon1 content1 content1 content1"
     "icon2 content2 content2 content2"
     "icon3 content3 content3 content3";
+    padding-left: 0;
+    padding-right: 0;
   }
   .product_highlightContent > ul {
-    list-style-position: inside;
-    padding: 0 0 0 2%;
     margin: 0;
+    padding: 0 0 0 2%;
+    list-style-position: inside;
     text-align: justify;
   }
   .product_highlightContent > ul > li {
-    font-size: 0.60em;
     padding-bottom: 5%;
+    font-size: 0.60em;
   }
   .product_highlightIcon {
     max-height: 5vh;
@@ -418,29 +398,29 @@ main {
   grid-template-rows: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-gap: 1.2%;
-  padding: 60px 3% 20px 3%;
   margin-bottom: 60px;
+  padding: 60px 3% 20px 3%;
   border-bottom: 1px solid var(--color-acc2tt);
 }
 
-.img_container {
+.product_gridImgContainer {
   height: 35vh;
   overflow: hidden;
 }
 
-.img_container > img {
+.product_gridImgContainer > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.img_container > img:hover {
+.product_gridImgContainer > img:hover {
   transform: scale(1.1);
   transition: linear 0.5s;
   opacity: 0.7;
 }
 
-.product {
+.product_container {
   padding: 0;
   padding-top: 25px;
   border: 1px solid var(--color-acc2tt);
@@ -451,32 +431,32 @@ main {
   display: flex;
   flex-flow: column;
   align-content: flex-end;
-  background-color: var(--color-acc2t);
   width: 100%;
   height: 100%;
-  text-align: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: var(--color-acc2t);
 }
 
 .product_header > h2 {
+  margin: 0;
   padding-top: 2.5vh;
   padding-bottom: 10px;
-  margin: 0;
-  border-top: 1px solid var(--color-acc2tt);
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  opacity: 0.7;
   text-transform: uppercase;
   text-align: center;
+  border-top: 1px solid var(--color-acc2tt);
+  opacity: 0.7;
 }
 
 .product_button {
+  padding: 5px 5vw 5px 10px;
   background-color: var(--color-acc1);
   border-radius: 3px;
   border: none;
-  padding: 5px 5vw 5px 10px;
   line-height: 1.7em;
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
@@ -495,7 +475,7 @@ main {
 }
 
 @media only screen and (max-width: 800px) {
-  .product ul > li {
+  .product_container ul > li {
     font-size: 0.90em;
   }
 }
@@ -505,18 +485,18 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-areas:
     "product1 product2"
-    "img_container1 img_container2"
+    "gridImgContainer1 gridImgContainer2"
     "product3 product4"
-    "img_container3 img_container4";
+    "gridImgContainer3 gridImgContainer4";
   }
-  .product > ul {
+  .product_container > ul {
+    margin: 0;
+    padding: 0 0 0 2%;
+    text-align: justify;
     font-size: 0.65em;
     list-style-position: inside;
-    padding: 0 0 0 2%;
-    margin: 0;
-    text-align: justify;
   }
-  .product ul > li {
+  .product_container ul > li {
     padding-bottom: 5%;
   }
   .product_header > h2 {
@@ -538,17 +518,17 @@ main {
   .product4 {
     grid-area: product4;
   }
-  .img_container1 {
-    grid-area: img_container1;
+  .gridImgContainer1 {
+    grid-area: gridImgContainer1;
   }
-  .img_container2 {
-    grid-area: img_container2;
+  .gridImgContainer2 {
+    grid-area: gridImgContainer2;
   }
-  .img_container3 {
-    grid-area: img_container3;
+  .gridImgContainer3 {
+    grid-area: gridImgContainer3;
   }
-  .img_container4 {
-    grid-area: img_container4;
+  .gridImgContainer4 {
+    grid-area: gridImgContainer4;
   }
 }
 
@@ -556,13 +536,13 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 60px;
-  border-bottom: 1px solid var(--color-acc2tt);
   padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-acc2tt);
 }
 
-.testimonyMainHeader {
-  padding-left: 5vw;
+.testimony_h2 {
   margin-bottom: 0;
+  padding-left: 5vw;
 }
 
 .testimony_container {
@@ -574,26 +554,26 @@ main {
   margin: 0 auto;
 }
 
-.testimonyContent {
+.testimony_content {
   flex-grow: 1;
   flex-basis: 17%;
   max-width: 25%;
+  margin: 3% 10px;
+  padding: 0 5px;
   font-size: 0.8em;
   text-align: left;
-  padding: 0 5px;
-  margin: 3% 10px;
   background-color: var(--color-acc2tt);
 }
 
-.testimonyHeaderStyle {
-  padding: 0 10px 5px 10px;
+.testimony_clientH3 {
   margin: 0 -10px;
+  padding: 0 10px 5px 10px;
   font-size: 0.8em;
   font-weight: 600;
   background-color: var(--color-acc1);
 }
 
-.testimonyFooterStyle {
+.testimony_clientFooter {
   font-size: 0.7em;
   font-weight: 400;
 }

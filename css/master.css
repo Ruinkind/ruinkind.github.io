@@ -72,21 +72,6 @@ header {
   font-size: 2em;
 }
 
-/* .header_imgBlock {
-  height: 44vh;
-  width: 95vw;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  overflow: hidden;
-  opacity: 0.8;
-} */
-
-/* .header_imgBlock > img {
-  object-fit: contain;
-  width: 100%;
-} */
-
 .header_border1 {
 }
 
@@ -311,11 +296,17 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 20px;
 }
 
 .product_highlightContent > ul {
   list-style: circle;
+}
+
+.product_highlightContent > ul > li {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }
 
 .highlightContent1 {
@@ -371,15 +362,19 @@ main {
   .product_highlight {
     padding-left: 0;
     padding-right: 0;
+    grid-template-areas:
+    "icon1 content1 content1 content1"
+    "icon2 content2 content2 content2"
+    "icon3 content3 content3 content3";
   }
   .product_highlightContent > ul {
-    font-size: 0.60em;
     list-style-position: inside;
     padding: 0 0 0 2%;
     margin: 0;
     text-align: justify;
   }
-  .product_highlightContent ul > li {
+  .product_highlightContent > ul > li {
+    font-size: 0.60em;
     padding-bottom: 5%;
   }
   .product_highlightIcon {
@@ -396,6 +391,25 @@ main {
   .product_highlightImage > img {
     max-height: 10vh;
     min-height: 10vh;
+  }
+  .highlightImage1 {
+    grid-area: 1 / 5 / 1 / 10;
+  }
+  .highlightImage2 {
+    grid-area: 2 / 5 / 2 / 9;
+  }
+  .highlightImage3 {
+    grid-area: 3 / 5 / 3 / 8;
+  }
+
+  .highlightImage1r {
+    grid-area: 1 / 10 / 1 / 13;
+  }
+  .highlightImage2r {
+    grid-area: 2 / 9 / 2 / 13;
+  }
+  .highlightImage3r {
+    grid-area: 3 / 8 / 3 / 13;
   }
 }
 
@@ -480,9 +494,23 @@ main {
   outline-color: var(--color-main);
 }
 
+@media only screen and (max-width: 800px) {
+  .product ul > li {
+    font-size: 0.90em;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  .product_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+    "product1 product2"
+    "img_container1 img_container2"
+    "product3 product4"
+    "img_container3 img_container4";
+  }
   .product > ul {
-    font-size: 0.60em;
+    font-size: 0.65em;
     list-style-position: inside;
     padding: 0 0 0 2%;
     margin: 0;
@@ -497,6 +525,30 @@ main {
   .product_button {
     font-size: 0.6em;
     padding: 0;
+  }
+  .product1 {
+    grid-area: product1;
+  }
+  .product2 {
+    grid-area: product2;
+  }
+  .product3 {
+    grid-area: product3;
+  }
+  .product4 {
+    grid-area: product4;
+  }
+  .img_container1 {
+    grid-area: img_container1;
+  }
+  .img_container2 {
+    grid-area: img_container2;
+  }
+  .img_container3 {
+    grid-area: img_container3;
+  }
+  .img_container4 {
+    grid-area: img_container4;
   }
 }
 
